@@ -1,6 +1,6 @@
 //
 //  menu.swift
-//  custer
+//  DRadio
 //
 //  Created by Serhiy Mytrovtsiy on 07/06/2020.
 //  Modified by Diego Rainero on 18/01/2022.
@@ -129,7 +129,7 @@ class Menu: NSMenu {
         self.addItem(iconInDock)
         
         self.addItem(NSMenuItem.separator())
-        self.addItem(NSMenuItem(title: "Quit Custer", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
+        self.addItem(NSMenuItem(title: "Quit DRadio", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
     }
     
     required init(coder: NSCoder) {

@@ -1,19 +1,20 @@
 //
 //  AppDelegate.swift
-//  custer
+//  DRadio
 //
 //  Created by Serhiy Mytrovtsiy on 07/06/2020.
+//  Modified by Diego Rainero on 18/01/2022.
 //  Using Swift 5.0.
 //  Running on macOS 10.15.
 //
-//  Copyright © 2020 Serhiy Mytrovtsiy. All rights reserved.
+//  Copyright © 2022 Diego Rainero. All rights reserved.
 //
 
 import Cocoa
 import os.log
 import Updater
 
-let log = OSLog(subsystem: Bundle.main.bundleIdentifier!, category: "custer")
+let log = OSLog(subsystem: Bundle.main.bundleIdentifier!, category: "dradio")
 var uri: String {
     get {
         return Store.shared.string(key: "url", defaultValue: "")
@@ -27,7 +28,7 @@ var uri: String {
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     private let menuBar: MenuBar = MenuBar()
-    private let updater = Updater(name: "Custer", providers: [Updater.Github(user: "exelban", repo: "custer", asset: "Custer.dmg")])
+    private let updater = Updater(name: "DRadio", providers: [Updater.Github(user: "diegorainero", repo: "DRadio", asset: "DRadio.dmg")])
     private let reachability: Reachability = try! Reachability()
     
     private let autostart: Bool = Store.shared.bool(key: "autoplay", defaultValue: false)

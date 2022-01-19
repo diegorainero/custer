@@ -1,9 +1,13 @@
 //
 //  radio.swift
-//  Custer
+//  DRadio
 //
-//  Created by Mac Lavoro on 19/01/22.
-//  Copyright © 2022 Serhiy Mytrovtsiy. All rights reserved.
+//  Created by Serhiy Mytrovtsiy on 07/06/2020.
+//  Modified by Diego Rainero on 18/01/2022.
+//  Using Swift 5.0.
+//  Running on macOS 10.15.
+//
+//  Copyright © 2022 Diego Rainero. All rights reserved.
 //
 
 import Foundation

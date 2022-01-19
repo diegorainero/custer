@@ -1,12 +1,13 @@
 //
 //  player.swift
-//  custer
+//  DRadio
 //
 //  Created by Serhiy Mytrovtsiy on 07/06/2020.
+//  Modified by Diego Rainero on 18/01/2022.
 //  Using Swift 5.0.
 //  Running on macOS 10.15.
 //
-//  Copyright © 2020 Serhiy Mytrovtsiy. All rights reserved.
+//  Copyright © 2022 Diego Rainero. All rights reserved.
 //
 
 import Cocoa
@@ -232,7 +233,7 @@ internal class Player: NSObject {
     private func setMetadata() {
         var info = self.nowPlayingInfoCenter.nowPlayingInfo ?? [String: Any]()
         
-        info[MPMediaItemPropertyTitle] = "Custer - radio"
+        info[MPMediaItemPropertyTitle] = "DRadio - radio"
         info[MPNowPlayingInfoPropertyElapsedPlaybackTime] = player.currentTime().seconds
         info[MPMediaItemPropertyPlaybackDuration] = 9999999
         
