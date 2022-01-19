@@ -74,12 +74,12 @@ prepare-dmg:
 
 	./create-dmg/create-dmg \
 	    --volname $(APP) \
-	    --background "./Custer/Supporting Files/background.png" \
+	    --background "./DRadio/Supporting Files/background.png" \
 	    --window-pos 200 120 \
 	    --window-size 500 320 \
 	    --icon-size 80 \
-	    --icon "Custer.app" 125 175 \
-	    --hide-extension "Custer.app" \
+	    --icon "DRadio.app" 125 175 \
+	    --hide-extension "DRadio.app" \
 	    --app-drop-link 375 175 \
 	    $(PWD)/$(APP).dmg \
 	    $(APP_PATH)
@@ -88,7 +88,7 @@ prepare-dmg:
 
 prepare-dSYM:
 	echo "Zipping dSYMs..."
-	cd $(BUILD_PATH)/Custer.xcarchive/dSYMs && zip -r $(PWD)/dSYMs.zip .
+	cd $(BUILD_PATH)/DRadio.xcarchive/dSYMs && zip -r $(PWD)/dSYMs.zip .
 	echo "Created zip with dSYMs"
 
 # --- HELPERS --- #
@@ -96,14 +96,14 @@ prepare-dSYM:
 clean:
 	rm -rf $(BUILD_PATH)
 	if [ -a $(PWD)/dSYMs.zip ]; then rm $(PWD)/dSYMs.zip; fi;
-	if [ -a $(PWD)/Custer.dmg ]; then rm $(PWD)/Custer.dmg; fi;
+	if [ -a $(PWD)/DRadio.dmg ]; then rm $(PWD)/DRadio.dmg; fi;
 
 next-version:
-	versionNumber=$$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" "$(PWD)/Custer/Supporting Files/Info.plist") ;\
+	versionNumber=$$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" "$(PWD)/DRadio/Supporting Files/Info.plist") ;\
 	echo "Actual version is: $$versionNumber" ;\
 	versionNumber=$$((versionNumber + 1)) ;\
 	echo "Next version is: $$versionNumber" ;\
-	/usr/libexec/PlistBuddy -c "Set :CFBundleVersion $$versionNumber" "$(PWD)/Custer/Supporting Files/Info.plist" ;\
+	/usr/libexec/PlistBuddy -c "Set :CFBundleVersion $$versionNumber" "$(PWD)/DRadio/Supporting Files/Info.plist" ;\
 
 check:
 	xcrun altool \

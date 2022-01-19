@@ -1,6 +1,6 @@
 # Privacy Policy
 
-Custer takes your privacy seriously. To better protect your privacy I provide this privacy policy notice explaining the way your personal information is collected and used.
+DRadio takes your privacy seriously. To better protect your privacy I provide this privacy policy notice explaining the way your personal information is collected and used.
 
 
 ## Collection of Routine Information
@@ -15,7 +15,7 @@ The security of your personal information is important to me, but remember that 
 
 ## Changes To This Privacy Policy
 
-This Privacy Policy is effective as of 26.09.2020 and will remain in effect except with respect to any changes in its provisions in the future, which will be in effect immediately after being posted on this page.
+This Privacy Policy is effective as of 18.01.2022 and will remain in effect except with respect to any changes in its provisions in the future, which will be in effect immediately after being posted on this page.
 
 I reserve the right to update or change my Privacy Policy at any time and you should check this Privacy Policy periodically. If I make any material changes to this Privacy Policy, I will notify you either through the email address you have provided me, or by placing a prominent notice on my website or app.
 
