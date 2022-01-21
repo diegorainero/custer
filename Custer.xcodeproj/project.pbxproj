@@ -19,6 +19,7 @@
 		9AA4F60826FFC5530086DD54 /* updater.sh in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9AA4F60526FFC4EC0086DD54 /* updater.sh */; };
 		9AC88F7626F7C67A00F8AE3C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC88F7526F7C67A00F8AE3C /* Reachability.swift */; };
 		9AC88F7C26F7D05900F8AE3C /* menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC88F7B26F7D05800F8AE3C /* menu.swift */; };
+		AE81934A27995B9E00982FE5 /* radio.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE81934927995B9E00982FE5 /* radio.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -69,6 +70,7 @@
 		9AA4F60526FFC4EC0086DD54 /* updater.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = updater.sh; sourceTree = "<group>"; };
 		9AC88F7526F7C67A00F8AE3C /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		9AC88F7B26F7D05800F8AE3C /* menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menu.swift; sourceTree = "<group>"; };
+		AE81934927995B9E00982FE5 /* radio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = radio.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				9A7921AA248D199400788F2B /* AppDelegate.swift */,
 				9AC88F7B26F7D05800F8AE3C /* menu.swift */,
 				9A7921BC248D247E00788F2B /* player.swift */,
+				AE81934927995B9E00982FE5 /* radio.swift */,
 			);
 			path = Custer;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				9A7921BD248D247E00788F2B /* player.swift in Sources */,
 				9A7921AB248D199400788F2B /* AppDelegate.swift in Sources */,
 				9AC88F7626F7C67A00F8AE3C /* Reachability.swift in Sources */,
+				AE81934A27995B9E00982FE5 /* radio.swift in Sources */,
 				9AC88F7C26F7D05900F8AE3C /* menu.swift in Sources */,
 				9A7921C1248D518400788F2B /* libs.swift in Sources */,
 			);
@@ -403,14 +407,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 8;
-				DEVELOPMENT_TEAM = RP2S87B72W;
+				DEVELOPMENT_TEAM = 8M52G227DK;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "custer/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = eu.exelban.custer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -428,14 +432,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 8;
-				DEVELOPMENT_TEAM = RP2S87B72W;
+				DEVELOPMENT_TEAM = 8M52G227DK;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "custer/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = eu.exelban.custer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -452,7 +456,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = RP2S87B72W;
+				DEVELOPMENT_TEAM = 8M52G227DK;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = LaunchAtLogin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -478,7 +482,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = RP2S87B72W;
+				DEVELOPMENT_TEAM = 8M52G227DK;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = LaunchAtLogin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

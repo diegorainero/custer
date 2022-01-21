@@ -27,6 +27,8 @@ var uri: String {
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     private let menuBar: MenuBar = MenuBar()
+    private let radio: Radio = Radio()
+    //os_log(.debug, log: log, "Radios");
     private let updater = Updater(name: "Custer", providers: [Updater.Github(user: "exelban", repo: "custer", asset: "Custer.dmg")])
     private let reachability: Reachability = try! Reachability()
     
