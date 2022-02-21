@@ -24,6 +24,16 @@ var uri: String {
     }
 }
 
+var search: String {
+    get {
+        return Store.shared.string(key: "search", defaultValue: "")
+    }
+    set {
+        Store.shared.set(key: "search", value: newValue)
+        Radio.shared.setSearch(newValue)
+    }
+}
+
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     private let menuBar: MenuBar = MenuBar()

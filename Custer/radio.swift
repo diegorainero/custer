@@ -13,10 +13,12 @@
 import Foundation
 import os.log
 
-class Radio: NSObject {
+internal class Radio: NSObject {
+    
   public static let shared = Radio()
+  private var search: String? = nil
   
-  struct Radio {
+  struct RadioList {
     var name: String = ""
     var url: String = ""
     var favicon: String = ""
@@ -30,8 +32,8 @@ class Radio: NSObject {
     _ = self.getLatestRadios()
   }
   //private let radiosURL = "http://all.api.radio-browser.info/json/stations"
-  private let radiosURL = "https://de1.api.radio-browser.info/json/stations/search?limit=10&name=rmc%20voy&hidebroken=true&order=clickcount&reverse=true"
-  private var radios = [Radio]()
+  private let radiosURL = "https://fr1.api.radio-browser.info/json/stations/search?limit=10&name=rmc%20voy&hidebroken=true&order=clickcount&reverse=true"
+  private var radios = [RadioList]()
   
   private func getLatestRadios() -> String {
     guard let url = URL(string: radiosURL) else {
@@ -59,10 +61,21 @@ class Radio: NSObject {
     semaphore.wait()
     return result
   }
-  
-  func parseJsonData(data: Data) -> [Radio] {
     
-    var radios = [Radio]()
+    public func setSearch(_ search: String) {
+        if search == "" {
+            os_log(.debug, log: log, "try to set empty search")
+            return
+        }
+        
+        self.search = search
+        
+        os_log(.debug, log: log, "new url set: %s", uri)
+    }
+  
+  func parseJsonData(data: Data) -> [RadioList] {
+    
+    var radios = [RadioList]()
     
     do {
       let jsonResult = try JSONSerialization.jsonObject(with: data, options: [])
@@ -70,7 +83,7 @@ class Radio: NSObject {
       
       let jsonRadios = jsonResult as! [AnyObject]
       for jsonRadio in jsonRadios {
-        var radio = Radio()
+        var radio = RadioList()
         radio.name = jsonRadio["name"] as! String
         radio.url = jsonRadio["url"] as! String
         radios.append(radio)

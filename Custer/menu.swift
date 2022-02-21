@@ -48,6 +48,10 @@ class MenuBar {
       self.menu.showAddressView()
     }
     
+//      if search == "" {
+//        self.menu.showSearchView()
+//      }
+    
     if Player.shared.isError() {
       return
     }
@@ -89,6 +93,10 @@ class Menu: NSMenu {
     let streamAddress = NSMenuItem(title: "Set stream address", action: #selector(self.showAddressView), keyEquivalent: "")
     streamAddress.target = self
     self.addItem(streamAddress)
+      
+    let searchRadio = NSMenuItem(title: "Search a Radio", action: #selector(self.showSearchView), keyEquivalent: "")
+    searchRadio.target = self
+    self.addItem(searchRadio)
     
     let clearCache = NSMenuItem(title: "Clear cache", action: #selector(self.clearCache), keyEquivalent: "r")
     clearCache.target = self
@@ -102,6 +110,16 @@ class Menu: NSMenu {
     let radioTitle = NSMenuItem(title: "Choose a radio", action: nil, keyEquivalent: "")
     volumeTitle.isEnabled = false
     
+    let radiosPref = ["RMC Voyage Voyage","Jazz Radio Blues","Travel.Radio"]
+      for radio in radiosPref {
+          let radioClick = NSMenuItem(title: radio, action: #selector(self.playRadio), keyEquivalent: "")
+          radioClick.isEnabled = true
+          radioClick.target = self
+          
+          self.addItem(radioTitle)
+          self.addItem(radioClick)
+      }
+                
     let radio1 = NSMenuItem(title: "RMC Voyage Voyage", action: #selector(self.playRadio), keyEquivalent: "")
     radio1.isEnabled = true
     radio1.target = self
@@ -157,6 +175,30 @@ class Menu: NSMenu {
     default: break
     }
   }
+    
+    @objc public func showSearchView() {
+      NSApplication.shared.activate(ignoringOtherApps: true)
+      let alert: NSAlert = NSAlert()
+      
+      alert.addButton(withTitle: "OK")
+      alert.addButton(withTitle: "Cancel")
+      alert.alertStyle = .informational
+      alert.messageText = "Search Radio"
+      
+      let input = NSTextField(frame: NSRect(x: 0, y: 0, width: 294, height: 24))
+      input.stringValue = search
+      input.cell!.wraps = false
+      input.cell!.isScrollable = true
+      
+      alert.accessoryView = input
+      
+      switch alert.runModal() {
+      case .OK, .alertFirstButtonReturn:
+        search = input.stringValue
+      case .cancel, .alertThirdButtonReturn: break
+      default: break
+      }
+    }
   
   @objc private func volumeChange(_ sender: NSSlider) {
     Player.shared.volume = Float(sender.doubleValue)
@@ -167,9 +209,20 @@ class Menu: NSMenu {
   }
   
   @objc private func playRadio(_ sender: NSMenuItem) {
-    os_log("Sender %@",sender.tag)
-    //uri = sender.target.Radio.url
-    //Store.shared.set(key: "uri", value: uri)
+      os_log("Sender %@",sender.title)
+      switch sender.title {
+      case "RMC Voyage Voyage":
+          uri = "http://edge.radiomontecarlo.net/rmcweb022"
+          break
+      case "Travel.Radio":
+          uri = "https://playoutonestreaming.com/proxy/ccfmonair/?mp=/stream"
+          break
+      case "Jazz Radio Blues":
+          uri = "http://jazzblues.ice.infomaniak.ch/jazzblues-high.mp3"
+      default:
+          uri = ""
+      }
+    Store.shared.set(key: "uri", value: uri)
     Player.shared.play()
   }
   
